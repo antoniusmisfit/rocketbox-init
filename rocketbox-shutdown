@@ -1,0 +1,6 @@
+echo "Shutting down..."
+hwclock -u -w
+sync
+umount -a -r
+echo "Come back soon! :)"
+sleep 1

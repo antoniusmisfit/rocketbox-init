@@ -1,0 +1,7 @@
+::restart:/sbin/init
+::shutdown:/etc/rocketbox-shutdown
+::ctrlaltdel:/sbin/reboot
+::once:runsvdir /etc/service
+::once:crond
+::once:cat /etc/banner.txt
+tty1::respawn:/sbin/getty 0 tty1

@@ -2,5 +2,6 @@ echo "Shutting down..."
 hwclock -u -w
 sync
 umount -a -r
+mount -o remount,ro /
 echo "Come back soon! :)"
 sleep 1

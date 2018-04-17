@@ -16,7 +16,7 @@ mdev -s
 echo "Synchronizing clock..."
 hwclock -u -s
 echo "Read and only permissions..."
-mount -o remount,rw /
+mount -o remount,ro /
 if [ -x /sbin/fsck ]; then
   echo "Starting fsck for local filesystems."
 	fsck -A -C -R -T -t nonfs,nosmbfs

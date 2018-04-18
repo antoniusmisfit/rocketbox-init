@@ -31,7 +31,7 @@ if [ -x /sbin/fsck ]; then
 		reboot
 	else
 		echo -n "Checking local filesystems: "
-		check_status
+		#check_status
 	fi
 fi
 echo "Read and write permissions..."

@@ -1,11 +1,17 @@
 #!/bin/sh
-echo "Rocketbox init v0.2alpha"
+
+rescue_shell() {
+	echo -e "\e[1;31m(FAIL)\e[0m System could not be initiated! Dropping to Emergency Shell!" 
+	exec sh
+}
+
+echo -e "\e[1mRocketbox init v0.2alpha\e[0m"
 echo "Starting up..."
 dmesg -n 1
 echo "Mounting filesystems..."
-mount -t proc none /proc
-mount -t sysfs none /sys
-mount -t tmpfs /tmp /tmp
+mount -t proc none /proc || rescue_shell
+mount -t sysfs none /sys || rescue_shell
+mount -t tmpfs /tmp /tmp || rescue_shell
 mkdir /dev/pts
 mkdir /dev/shm
 mount -t devpts none /dev/pts
@@ -35,7 +41,7 @@ if [ -x /sbin/fsck ]; then
 	fi
 fi
 echo "Read and write permissions..."
-mount -o remount,rw /
+mount -o remount,rw / || rescue_shell
 echo "Activating swap..."
 swapon -a
 echo "Mounting all from /etc/fstab..."

@@ -1,5 +1,5 @@
-all:	install
-	@echo
+all:
+	@echo "Please install Rocketbox via 'make install'"
 
 install:
 	@echo "Installing rocketbox-init to $(DESTDIR)..."

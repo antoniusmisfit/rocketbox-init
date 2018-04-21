@@ -1,5 +1,5 @@
-all:
-	@echo 'Only "install" option is available'
+all:	install
+	@echo
 
 install:
 	@echo "Installing rocketbox-init to $(DESTDIR)..."
@@ -11,5 +11,4 @@ install:
 	@cp -av rocketbox-service $(DESTDIR)/etc
 	ln -s etc/rocketbox-service $(DESTDIR)$(PREFIX)/bin/rocketbox-service
 	ln -s etc/rocketbox-init $(DESTDIR)/init
-	@echo "installation if rocketbox-init is completed!"
-
+	@echo "Installation of rocketbox-init is completed!"

@@ -1,4 +1,5 @@
 # rocketbox-init
+Note: Rocketbox has been discontinued.
 Rocketbox is a wrapper init for Busybox based Linux distributions. Rocketbox currently has three main components: rocketbox-init, rocketbox-service, and rocketbox-shutdown. It also makes use of /etc/inittab.
 ## Installation
 To install Rocketbox on a Busybox-based Linux system, you must follow these instructions as root:
